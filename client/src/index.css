@@ -1,0 +1,89 @@
+:root {
+  --primary-color: #0D6EFD;
+  --secondary-color: #6610F2;
+  --accent-color: #20C997;
+  --bg-light: #F8F9FA;
+  --bg-dark: #121212;
+  --text-light: #333333;
+  --text-dark: #F8F9FA;
+  --card-bg-light: rgba(255, 255, 255, 0.8);
+  --card-bg-dark: rgba(30, 30, 30, 0.8);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: var(--card-bg-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+body.dark-mode .glass-card {
+  background: var(--card-bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tracking-wider {
+  letter-spacing: 0.1em;
+}
+
+.fs-7 {
+  font-size: 0.85rem;
+}
+
+.filter-grayscale h3 {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.filter-grayscale h3:hover {
+  filter: grayscale(0%);
+}
+
+.blur-blob {
+  opacity: 0.4;
+}
+
+/* Glassmorphism Cards */
+.hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); box-shadow: 0 0 20px rgba(13, 110, 253, 0.5); }
+  100% { opacity: 0.6; transform: scale(0.98); }
+}
+
+.ai-pulse-loader {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, rgba(13,110,253,0.1), rgba(102,16,242,0.1));
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  border-radius: 12px;
+}
